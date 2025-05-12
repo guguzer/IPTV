@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV infynix - Revenda Pós-Pago com até 300% de Lucro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        
+        :root {
+            --primary: #ff0000;
+            --primary-dark: #cc0000;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #ffffff;
+            --gray: #a0a0a0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--darker);
+            color: var(--light);
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(5, 5, 5, 0.95)), 
+                        url('https://images.unsplash.com/photo-1605106702734-205df224ecce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--light);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+            background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(15, 15, 15, 0.9));
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, rgba(25, 25, 25, 0.8), rgba(20, 20, 20, 0.9));
+            border-top: 4px solid var(--primary);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(255, 0, 0, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Modern additions */
+        .gradient-text {
+            background: linear-gradient(45deg, #ff0000, #ff6b00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .modern-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.3);
+            border-color: rgba(255, 0, 0, 0.5);
+        }
+        
+        .profit-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff0000, #ff6b00);
+            color white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .profit-calculator {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 107, 0, 0.1));
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            border-radius: 16px;
+        }
+        
+        .profit-highlight {
+            background: linear-gradient(45deg, rgba(255, 0, 0, 0.2), rgba(255, 107, 0, 0.2));
+            border-left: 4px solid var(--primary);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .popular-plan {
+            position: relative;
+            border: 2px solid var(--primary);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-90 fixed w-full z-50 shadow-xl backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-red-600 font-bold text-2xl md:text-3xl glow-text">IPTV infynix</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#home" class="nav-link text-white px-3 py-2 text-sm font-medium hover:text-red-500">Início</a>
+                            <a href="#planos" class="nav-link text-white px-3 py-2 text-sm font-medium hover:text-red-500">Planos</a>
+                            <a href="#revenda" class="nav-link text-white px-3 py-2 text-sm font-medium hover:text-red-500">Revenda</a>
+                            <a href="#lucro" class="nav-link text-white px-3 py-2 text-sm font-medium hover:text-red-500">Seu Lucro</a>
+                            <a href="#depoimentos" class="nav-link text-white px-3 py-2 text-sm font-medium hover:text-red-500">Depoimentos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-primary text-white px-6 py-3 rounded-lg text-sm font-bold inline-flex items-center">
+                        <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                    </a>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
+                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3 bg-black bg-opacity-95 backdrop-blur-sm">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Início</a>
+                <a href="#planos" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Planos</a>
+                <a href="#revenda" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Revenda</a>
+                <a href="#lucro" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Seu Lucro</a>
+                <a href="#depoimentos" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Depoimentos</a>
+                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="block btn-primary text-white px-3 py-3 rounded-md text-base font-bold text-center mt-2">
+                    <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white">
+                <span class="gradient-text">IPTV Pós-Pago</span> infynix
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto">
+                Assista seus canais favoritos em qualquer dispositivo com a melhor qualidade e estabilidade
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#planos" class="btn-primary text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 transform hover:scale-105 transition-all">
+                    <i class="fas fa-tv mr-2"></i> Ver Planos
+                </a>
+                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 hover:bg-red-600 transform hover:scale-105 transition-all">
+                    <i class="fas fa-user-tie mr-2"></i> Quero Revender
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section id="planos" class="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
+                    Nossos <span class="gradient-text">Planos Pós-Pagos</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Escolha o plano ideal para você ou sua família
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plano Básico -->
+                <div class="pricing-card bg-gray-900 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Básico</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold gradient-text">R$39,90</span>
+                        <span class="text-gray-400 block">por mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+5.000 Canais</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+30.000 Filmes/Séries</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>1 Conexão Simultânea</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Qualidade Full HD/4K</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
+                        Assinar Agora
+                    </a>
+                </div>
+                
+                <!-- Plano Premium (Mais Popular) -->
+                <div class="pricing-card popular-plan bg-gray-900 p-8 rounded-xl relative">
+                    <div class="popular-badge">MAIS POPULAR</div>
+                    <h3 class="text-2xl font-bold mb-4 text-center">Premium</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold gradient-text">R$59,90</span>
+                        <span class="text-gray-400 block">por mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+10.000 Canails</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+50.000 Filmes/Séries</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>2 Conexões Simultâneas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Qualidade Full HD/4K</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Programação Adulta</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-primary text-white w-full py-3 rounded-lg text-center font-bold">
+                        Assinar Agora
+                    </a>
+                </div>
+                
+                <!-- Plano Família -->
+                <div class="pricing-card bg-gray-900 p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-center">Família</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold gradient-text">R$89,90</span>
+                        <span class="text-gray-400 block">por mês</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+15.000 Canais</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>+100.000 Filmes/Séries</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>4 Conexões Simultâneas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Qualidade Full HD/4K</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Programação Adulta</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
+                        Assinar Agora
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-gray-400 max-w-3xl mx-auto">
+                    Todos os planos incluem suporte 24/7, atualização diária de conteúdo e garantia de satisfação.
+                    Pague mensalmente sem compromisso de fidelidade.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenda Section -->
+    <section id="revenda" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
+                    Programa de <span class="gradient-text">Revenda</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ganhe dinheiro revendendo nosso IPTV premium para seus clientes
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white">Como Funciona</h3>
+                    <p class="text-gray-300 mb-6">
+                        Nosso programa de revenda permite que você ofereça nossos planos pós-pagos aos seus clientes,
+                        mantendo uma margem de lucro atraente em cada venda e renovação mensal.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Preços Especiais</h4>
+                                <p class="text-gray-400">
+                                    Você paga um valor especial como revendedor e define seu próprio preço de venda.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Painel de Controle</h4>
+                                <p class="text-gray-400">
+                                    Acesso a um painel completo para gerenciar seus clientes e acompanhar suas vendas.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Renda Recorrente</h4>
+                                <p class="text-gray-400">
+                                    Ganhe todo mês com as renovações dos planos dos seus clientes.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Suporte Completo</h4>
+                                <p class="text-gray-400">
+                                    Nossa equipe te ajuda com tudo, desde instalação até estratégias de vendas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Preços para Revendedores</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold">Plano Básico</h4>
+                                <p class="text-sm text-gray-400">1 conexão</p>
+                            </div>
+                            <span class="font-bold text-lg">R$25/mês</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center border-b border-gray-800 pb-4">
+                            <div>
+                                <h4 class="font-bold">Plano Premium</h4>
+                                <p class="text-sm text-gray-400">2 conexões</p>
+                            </div>
+                            <span class="font-bold text-lg">R$35/mês</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center pb-4">
+                            <div>
+                                <h4 class="font-bold">Plano Família</h4>
+                                <p class="text-sm text-gray-400">4 conexões</p>
+                            </div>
+                            <span class="font-bold text-lg">R$55/mês</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 profit-highlight p-6 rounded-lg">
+                        <h4 class="text-lg font-bold mb-2 text-center">Potencial de Lucro</h4>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <span class="text-gray-300 block text-sm">Preço de Revenda</span>
+                                <span class="text-white font-bold">R$40-60</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-300 block text-sm">Lucro por Cliente</span>
+                                <span class="text-green-400 font-bold">R$15-35</span>
+                            </div>
+                            <div>
+                                <span class="text-gray-300 block text-sm">Margem</span>
+                                <span class="gradient-text font-bold">60-150%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm mt-6 text-center">
+                        * Valores referentes ao plano Premium. Você define seu preço final de venda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lucro Section -->
+    <section id="lucro" class="py-24 bg-gradient-to-b from-gray-900 to-black parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
+                    <span class="gradient-text">Simule Seu Lucro</span> Mensal
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Veja quanto você pode ganhar como revendedor do nosso IPTV
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="profit-calculator p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-white">Calculadora de Lucro</h3>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-300 mb-2">Quantidade de Clientes</label>
+                        <input type="range" id="clientRange" min="5" max="100" value="20" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between mt-2">
+                            <span class="text-gray-400">5</span>
+                            <span id="clientValue" class="text-white font-bold">20 clientes</span>
+                            <span class="text-gray-400">100+</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-300 mb-2">Preço de Revenda (R$)</label>
+                        <input type="range" id="priceRange" min="40" max="60" value="50" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between mt-2">
+                            <span class="text-gray-400">R$40</span>
+                            <span id="priceValue" class="text-white font-bold">R$50</span>
+                            <span class="text-gray-400">R$60</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profit-highlight p-6 rounded-lg mb-6">
+                        <h4 class="text-lg font-bold mb-2 text-white">Seu Lucro Estimado</h4>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-300">Lucro por Cliente:</span>
+                            <span id="profitPerClient" class="text-green-400 font-bold">R$15</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-300">Lucro Mensal:</span>
+                            <span id="monthlyProfit" class="text-green-400 font-bold text-xl">R$300</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-gray-300">Lucro Anual:</span>
+                            <span id="yearlyProfit" class="text-green-400 font-bold text-xl">R$3.600</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-400 text-sm">
+                        * Cálculo baseado no plano Premium (custo R$35 para revendedor)
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-white">Exemplo Prático:</h3>
+                    
+                    <div class="bg-gray-900 p-6 rounded-xl mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">50 Clientes</h4>
+                                <p class="text-sm text-gray-400">Meta alcançável em 2-3 meses</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">R$50 por cliente</h4>
+                                <p class="text-sm text-gray-400">Preço médio de revenda</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">R$750 de lucro</h4>
+                                <p class="text-sm text-gray-400">Com apenas 50 clientes mensais</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-red-900 to-black p-6 rounded-xl glow-box">
+                        <h4 class="text-xl font-bold mb-3 text-white">Meta dos 100 Clientes</h4>
+                        <p class="text-gray-300 mb-4">
+                            Com nossa metodologia e suporte, alcançar 100 clientes fixos é totalmente possível. Isso significa:
+                        </p>
+                        <div class="text-center">
+                            <span class="text-3xl font-bold gradient-text">R$1.500/mês</span>
+                            <p class="text-gray-400 mt-2">de lucro recorrente!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-24 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
+                    O que dizem nossos <span class="gradient-text">Clientes e Revendedores</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Veja resultados reais de quem já uso nosso serviço
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Depoimentos de Clientes -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-center text-white">Clientes</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="testimonial-card p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic mb-6">
+                                "Melhor IPTV que já usei! Sem travamentos, imagem em 4K e atendimento excelente. Cancelei minha TV a cabo e economizo R$200 por mês."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
+                                    M
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Marcos</h4>
+                                    <p class="text-sm text-gray-400">Cliente há 8 meses</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic mb-6">
+                                "A família toda ama! Cada um assiste no seu dispositivo sem problemas. O catálogo de filmes é imenso e sempre atualizado."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
+                                    A
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Ana</h4>
+                                    <p class="text-sm text-gray-400">Cliente há 5 meses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Depoimentos de Revendedores -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 text-center text-white">Revendedores</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="testimonial-card p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic mb-6">
+                                "Em 4 meses já tenho 82 clientes fixos. Faturamento mensal de R$1.230 com custo de apenas R$490. Melhor negócio que já fiz!"
+                            </p>
+                            <div class="flex items-center">
+                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
+                                    C
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Carlos</h4>
+                                    <p class="text-sm text-gray-400">Revendedor Top</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card p-6 rounded-xl">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-400 text-xl mr-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 italic mb-6">
+                                "Comecei vendendo para amigos e hoje tenho clientes em 3 cidades. O suporte me ajudou demais no início. Lucro mensal de R$800+."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
+                                    J
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Juliana</h4>
+                                    <p class="text-sm text-gray-400">Revendedora</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-red-900 to-black parallax">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 glow-text">
+                Comece hoje mesmo!
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                Assine como cliente ou comece a revender e transforme seu faturamento
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="bg-white text-red-600 px-12 py-5 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105">
+                    <i class="fas fa-tv mr-3"></i> Assinar Agora
+                </a>
+                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all transform hover:scale-105">
+                    <i class="fas fa-user-tie mr-3"></i> Quero Revender
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="floating-btn btn-primary text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 glow-text">IPTV infynix</h3>
+                    <p class="text-gray-400">
+                        A melhor experiência em streaming com qualidade premium e atendimento especializado.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Planos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Básico</a></li>
+                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Premium</a></li>
+                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Família</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Revenda</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#revenda" class="text-gray-400 hover:text-white transition">Como Funciona</a></li>
+                        <li><a href="#lucro" class="text-gray-400 hover:text-white transition">Potencial de Lucro</a></li>
+                        <li><a href="#depoimentos" class="text-gray-400 hover:text-white transition">Depoimentos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp text-green-500 mr-3"></i>
+                            <span class="text-gray-400">(15) 99631-5518</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-red-500 mr-3"></i>
+                            <span class="text-gray-400">contato@iptvinfynix.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-yellow-500 mr-3"></i>
+                            <span class="text-gray-400">Atendimento 24/7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
+                <p class="text-gray-500 text-sm">
+                    © 2023 IPTV infynix. Todos os direitos reservados.
+                    <br class="md:hidden">
+                    Serviço de streaming privado.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Profit Calculator
+        const clientRange = document.getElementById('clientRange');
+        const priceRange = document.getElementById('priceRange');
+        const clientValue = document.getElementById('clientValue');
+        const priceValue = document.getElementById('priceValue');
+        const profitPerClient = document.getElementById('profitPerClient');
+        const monthlyProfit = document.getElementById('monthlyProfit');
+        const yearlyProfit = document.getElementById('yearlyProfit');
+        
+        function updateProfit() {
+            const clients = parseInt(clientRange.value);
+            const price = parseInt(priceRange.value);
+            const costPerClient = 35; // R$35 para revendedor (plano Premium)
+            const profit = clients * (price - costPerClient);
+            const individualProfit = price - costPerClient;
+            
+            clientValue.textContent = `${clients} clientes`;
+            priceValue.textContent = `R$${price}`;
+            profitPerClient.textContent = `R$${individualProfit}`;
+            monthlyProfit.textContent = `R$${profit.toLocaleString('pt-BR')}`;
+            yearlyProfit.textContent = `R$${(profit * 12).toLocaleString('pt-BR')}`;
+        }
+        
+        clientRange.addEventListener('input', updateProfit);
+        priceRange.addEventListener('input', updateProfit);
+        
+        // Initialize calculator
+        updateProfit();
+        
+        // Scroll Reveal Animation
+        ScrollReveal().reveal('.hero-section h1', {
+            delay: 300,
+            distance: '50px',
+            origin: 'top',
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.hero-section p', {
+            delay: 400,
+            distance: '50px',
+            origin: 'top',
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.hero-section a', {
+            delay: 500,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.modern-card', {
+            delay: 300,
+            interval: 100,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.testimonial-card', {
+            delay: 300,
+            interval: 100,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out'
+        });
+        
+        ScrollReveal().reveal('.pricing-card', {
+            delay: 300,
+            interval: 100,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out'
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
