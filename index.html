@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPTV infynix - Revenda Pós-Pago com até 300% de Lucro</title>
+    <title>IPTV infynix - DEMO - Revenda Pós-Pago com até 300% de Lucro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -219,11 +219,29 @@
             font-size: 0.9rem;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
         }
+        
+        .demo-banner {
+            background: linear-gradient(45deg, #ff0000, #ff6b00);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Demo Banner -->
+    <div class="demo-banner">
+        <i class="fas fa-exclamation-triangle mr-2"></i> SITE DEMONSTRATIVO - NÃO É UM SERVIÇO REAL
+    </div>
+    
     <!-- Navigation -->
-    <nav class="bg-black bg-opacity-90 fixed w-full z-50 shadow-xl backdrop-blur-sm">
+    <nav class="bg-black bg-opacity-90 fixed w-full z-50 shadow-xl backdrop-blur-sm" style="top: 40px;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center">
@@ -241,9 +259,9 @@
                     </div>
                 </div>
                 <div class="hidden md:block">
-                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-primary text-white px-6 py-3 rounded-lg text-sm font-bold inline-flex items-center">
-                        <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
-                    </a>
+                    <button class="btn-primary text-white px-6 py-3 rounded-lg text-sm font-bold inline-flex items-center">
+                        <i class="fas fa-info-circle mr-2"></i> Site Demo
+                    </button>
                 </div>
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none">
@@ -263,15 +281,15 @@
                 <a href="#revenda" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Revenda</a>
                 <a href="#lucro" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Seu Lucro</a>
                 <a href="#depoimentos" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:bg-gray-900 hover:text-red-500">Depoimentos</a>
-                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="block btn-primary text-white px-3 py-3 rounded-md text-base font-bold text-center mt-2">
-                    <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
-                </a>
+                <button class="block btn-primary text-white px-3 py-3 rounded-md text-base font-bold text-center mt-2 w-full">
+                    <i class="fas fa-info-circle mr-2"></i> Site Demo
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section min-h-screen flex items-center pt-20">
+    <section id="home" class="hero-section min-h-screen flex items-center pt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white">
                 <span class="gradient-text">IPTV Pós-Pago</span> infynix
@@ -280,12 +298,12 @@
                 Assista seus canais favoritos em qualquer dispositivo com a melhor qualidade e estabilidade
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#planos" class="btn-primary text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 transform hover:scale-105 transition-all">
+                <button class="btn-primary text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 transform hover:scale-105 transition-all">
                     <i class="fas fa-tv mr-2"></i> Ver Planos
-                </a>
-                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 hover:bg-red-600 transform hover:scale-105 transition-all">
+                </button>
+                <button class="btn-outline text-white px-10 py-5 rounded-lg text-lg font-bold mx-auto sm:mx-0 hover:bg-red-600 transform hover:scale-105 transition-all">
                     <i class="fas fa-user-tie mr-2"></i> Quero Revender
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -328,9 +346,9 @@
                             <span>Qualidade Full HD/4K</span>
                         </li>
                     </ul>
-                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
+                    <button class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
                         Assinar Agora
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- Plano Premium (Mais Popular) -->
@@ -363,9 +381,9 @@
                             <span>Programação Adulta</span>
                         </li>
                     </ul>
-                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-primary text-white w-full py-3 rounded-lg text-center font-bold">
+                    <button class="btn-primary text-white w-full py-3 rounded-lg text-center font-bold">
                         Assinar Agora
-                    </a>
+                    </button>
                 </div>
                 
                 <!-- Plano Família -->
@@ -397,9 +415,9 @@
                             <span>Programação Adulta</span>
                         </li>
                     </ul>
-                    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
+                    <button class="btn-outline text-white w-full py-3 rounded-lg text-center font-bold hover:bg-red-600">
                         Assinar Agora
-                    </a>
+                    </button>
                 </div>
             </div>
             
@@ -436,522 +454,4 @@
                         <div class="flex items-start">
                             <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
                                 <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Preços Especiais</h4>
-                                <p class="text-gray-400">
-                                    Você paga um valor especial como revendedor e define seu próprio preço de venda.
-                                </p>
-                            </div>
-                        </div>
                         
-                        <div class="flex items-start">
-                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Painel de Controle</h4>
-                                <p class="text-gray-400">
-                                    Acesso a um painel completo para gerenciar seus clientes e acompanhar suas vendas.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Renda Recorrente</h4>
-                                <p class="text-gray-400">
-                                    Ganhe todo mês com as renovações dos planos dos seus clientes.
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Suporte Completo</h4>
-                                <p class="text-gray-400">
-                                    Nossa equipe te ajuda com tudo, desde instalação até estratégias de vendas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modern-card p-8 rounded-xl">
-                    <h3 class="text-2xl font-bold mb-6 text-center">Preços para Revendedores</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex justify-between items-center border-b border-gray-800 pb-4">
-                            <div>
-                                <h4 class="font-bold">Plano Básico</h4>
-                                <p class="text-sm text-gray-400">1 conexão</p>
-                            </div>
-                            <span class="font-bold text-lg">R$25/mês</span>
-                        </div>
-                        
-                        <div class="flex justify-between items-center border-b border-gray-800 pb-4">
-                            <div>
-                                <h4 class="font-bold">Plano Premium</h4>
-                                <p class="text-sm text-gray-400">2 conexões</p>
-                            </div>
-                            <span class="font-bold text-lg">R$35/mês</span>
-                        </div>
-                        
-                        <div class="flex justify-between items-center pb-4">
-                            <div>
-                                <h4 class="font-bold">Plano Família</h4>
-                                <p class="text-sm text-gray-400">4 conexões</p>
-                            </div>
-                            <span class="font-bold text-lg">R$55/mês</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 profit-highlight p-6 rounded-lg">
-                        <h4 class="text-lg font-bold mb-2 text-center">Potencial de Lucro</h4>
-                        <div class="grid grid-cols-3 gap-4 text-center">
-                            <div>
-                                <span class="text-gray-300 block text-sm">Preço de Revenda</span>
-                                <span class="text-white font-bold">R$40-60</span>
-                            </div>
-                            <div>
-                                <span class="text-gray-300 block text-sm">Lucro por Cliente</span>
-                                <span class="text-green-400 font-bold">R$15-35</span>
-                            </div>
-                            <div>
-                                <span class="text-gray-300 block text-sm">Margem</span>
-                                <span class="gradient-text font-bold">60-150%</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-400 text-sm mt-6 text-center">
-                        * Valores referentes ao plano Premium. Você define seu preço final de venda.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lucro Section -->
-    <section id="lucro" class="py-24 bg-gradient-to-b from-gray-900 to-black parallax" style="background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
-                    <span class="gradient-text">Simule Seu Lucro</span> Mensal
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Veja quanto você pode ganhar como revendedor do nosso IPTV
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="profit-calculator p-8 rounded-xl">
-                    <h3 class="text-2xl font-bold mb-6 text-center text-white">Calculadora de Lucro</h3>
-                    
-                    <div class="mb-6">
-                        <label class="block text-gray-300 mb-2">Quantidade de Clientes</label>
-                        <input type="range" id="clientRange" min="5" max="100" value="20" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
-                        <div class="flex justify-between mt-2">
-                            <span class="text-gray-400">5</span>
-                            <span id="clientValue" class="text-white font-bold">20 clientes</span>
-                            <span class="text-gray-400">100+</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mb-6">
-                        <label class="block text-gray-300 mb-2">Preço de Revenda (R$)</label>
-                        <input type="range" id="priceRange" min="40" max="60" value="50" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer">
-                        <div class="flex justify-between mt-2">
-                            <span class="text-gray-400">R$40</span>
-                            <span id="priceValue" class="text-white font-bold">R$50</span>
-                            <span class="text-gray-400">R$60</span>
-                        </div>
-                    </div>
-                    
-                    <div class="profit-highlight p-6 rounded-lg mb-6">
-                        <h4 class="text-lg font-bold mb-2 text-white">Seu Lucro Estimado</h4>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-300">Lucro por Cliente:</span>
-                            <span id="profitPerClient" class="text-green-400 font-bold">R$15</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-2">
-                            <span class="text-gray-300">Lucro Mensal:</span>
-                            <span id="monthlyProfit" class="text-green-400 font-bold text-xl">R$300</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-2">
-                            <span class="text-gray-300">Lucro Anual:</span>
-                            <span id="yearlyProfit" class="text-green-400 font-bold text-xl">R$3.600</span>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-400 text-sm">
-                        * Cálculo baseado no plano Premium (custo R$35 para revendedor)
-                    </p>
-                </div>
-                
-                <div>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-white">Exemplo Prático:</h3>
-                    
-                    <div class="bg-gray-900 p-6 rounded-xl mb-6">
-                        <div class="flex items-center mb-4">
-                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold">50 Clientes</h4>
-                                <p class="text-sm text-gray-400">Meta alcançável em 2-3 meses</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center mb-4">
-                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                                <i class="fas fa-dollar-sign"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold">R$50 por cliente</h4>
-                                <p class="text-sm text-gray-400">Preço médio de revenda</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold">R$750 de lucro</h4>
-                                <p class="text-sm text-gray-400">Com apenas 50 clientes mensais</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gradient-to-r from-red-900 to-black p-6 rounded-xl glow-box">
-                        <h4 class="text-xl font-bold mb-3 text-white">Meta dos 100 Clientes</h4>
-                        <p class="text-gray-300 mb-4">
-                            Com nossa metodologia e suporte, alcançar 100 clientes fixos é totalmente possível. Isso significa:
-                        </p>
-                        <div class="text-center">
-                            <span class="text-3xl font-bold gradient-text">R$1.500/mês</span>
-                            <p class="text-gray-400 mt-2">de lucro recorrente!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Depoimentos Section -->
-    <section id="depoimentos" class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 section-title">
-                    O que dizem nossos <span class="gradient-text">Clientes e Revendedores</span>
-                </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    Veja resultados reais de quem já uso nosso serviço
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Depoimentos de Clientes -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-8 text-center text-white">Clientes</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="testimonial-card p-6 rounded-xl">
-                            <div class="flex items-center mb-4">
-                                <div class="text-yellow-400 text-xl mr-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic mb-6">
-                                "Melhor IPTV que já usei! Sem travamentos, imagem em 4K e atendimento excelente. Cancelei minha TV a cabo e economizo R$200 por mês."
-                            </p>
-                            <div class="flex items-center">
-                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
-                                    M
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Marcos</h4>
-                                    <p class="text-sm text-gray-400">Cliente há 8 meses</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 rounded-xl">
-                            <div class="flex items-center mb-4">
-                                <div class="text-yellow-400 text-xl mr-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic mb-6">
-                                "A família toda ama! Cada um assiste no seu dispositivo sem problemas. O catálogo de filmes é imenso e sempre atualizado."
-                            </p>
-                            <div class="flex items-center">
-                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
-                                    A
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Ana</h4>
-                                    <p class="text-sm text-gray-400">Cliente há 5 meses</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Depoimentos de Revendedores -->
-                <div>
-                    <h3 class="text-2xl font-bold mb-8 text-center text-white">Revendedores</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="testimonial-card p-6 rounded-xl">
-                            <div class="flex items-center mb-4">
-                                <div class="text-yellow-400 text-xl mr-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic mb-6">
-                                "Em 4 meses já tenho 82 clientes fixos. Faturamento mensal de R$1.230 com custo de apenas R$490. Melhor negócio que já fiz!"
-                            </p>
-                            <div class="flex items-center">
-                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
-                                    C
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Carlos</h4>
-                                    <p class="text-sm text-gray-400">Revendedor Top</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="testimonial-card p-6 rounded-xl">
-                            <div class="flex items-center mb-4">
-                                <div class="text-yellow-400 text-xl mr-2">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 italic mb-6">
-                                "Comecei vendendo para amigos e hoje tenho clientes em 3 cidades. O suporte me ajudou demais no início. Lucro mensal de R$800+."
-                            </p>
-                            <div class="flex items-center">
-                                <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 text-xl font-bold">
-                                    J
-                                </div>
-                                <div>
-                                    <h4 class="font-bold">Juliana</h4>
-                                    <p class="text-sm text-gray-400">Revendedora</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-24 bg-gradient-to-r from-red-900 to-black parallax">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 glow-text">
-                Comece hoje mesmo!
-            </h2>
-            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-                Assine como cliente ou comece a revender e transforme seu faturamento
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="bg-white text-red-600 px-12 py-5 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all transform hover:scale-105">
-                    <i class="fas fa-tv mr-3"></i> Assinar Agora
-                </a>
-                <a href="https://wa.me/message/S7DCBIS57QDDI1" class="bg-transparent border-2 border-white text-white px-12 py-5 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all transform hover:scale-105">
-                    <i class="fas fa-user-tie mr-3"></i> Quero Revender
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/message/S7DCBIS57QDDI1" class="floating-btn btn-primary text-white rounded-full w-20 h-20 flex items-center justify-center text-3xl">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-black py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12">
-                <div>
-                    <h3 class="text-2xl font-bold mb-6 glow-text">IPTV infynix</h3>
-                    <p class="text-gray-400">
-                        A melhor experiência em streaming com qualidade premium e atendimento especializado.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white">Planos</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Básico</a></li>
-                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Premium</a></li>
-                        <li><a href="#planos" class="text-gray-400 hover:text-white transition">Família</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white">Revenda</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#revenda" class="text-gray-400 hover:text-white transition">Como Funciona</a></li>
-                        <li><a href="#lucro" class="text-gray-400 hover:text-white transition">Potencial de Lucro</a></li>
-                        <li><a href="#depoimentos" class="text-gray-400 hover:text-white transition">Depoimentos</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-bold mb-6 text-white">Contato</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fab fa-whatsapp text-green-500 mr-3"></i>
-                            <span class="text-gray-400">(15) 99631-5518</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope text-red-500 mr-3"></i>
-                            <span class="text-gray-400">contato@iptvinfynix.com</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-clock text-yellow-500 mr-3"></i>
-                            <span class="text-gray-400">Atendimento 24/7</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
-                <p class="text-gray-500 text-sm">
-                    © 2023 IPTV infynix. Todos os direitos reservados.
-                    <br class="md:hidden">
-                    Serviço de streaming privado.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        // Profit Calculator
-        const clientRange = document.getElementById('clientRange');
-        const priceRange = document.getElementById('priceRange');
-        const clientValue = document.getElementById('clientValue');
-        const priceValue = document.getElementById('priceValue');
-        const profitPerClient = document.getElementById('profitPerClient');
-        const monthlyProfit = document.getElementById('monthlyProfit');
-        const yearlyProfit = document.getElementById('yearlyProfit');
-        
-        function updateProfit() {
-            const clients = parseInt(clientRange.value);
-            const price = parseInt(priceRange.value);
-            const costPerClient = 35; // R$35 para revendedor (plano Premium)
-            const profit = clients * (price - costPerClient);
-            const individualProfit = price - costPerClient;
-            
-            clientValue.textContent = `${clients} clientes`;
-            priceValue.textContent = `R$${price}`;
-            profitPerClient.textContent = `R$${individualProfit}`;
-            monthlyProfit.textContent = `R$${profit.toLocaleString('pt-BR')}`;
-            yearlyProfit.textContent = `R$${(profit * 12).toLocaleString('pt-BR')}`;
-        }
-        
-        clientRange.addEventListener('input', updateProfit);
-        priceRange.addEventListener('input', updateProfit);
-        
-        // Initialize calculator
-        updateProfit();
-        
-        // Scroll Reveal Animation
-        ScrollReveal().reveal('.hero-section h1', {
-            delay: 300,
-            distance: '50px',
-            origin: 'top',
-            easing: 'ease-in-out'
-        });
-        
-        ScrollReveal().reveal('.hero-section p', {
-            delay: 400,
-            distance: '50px',
-            origin: 'top',
-            easing: 'ease-in-out'
-        });
-        
-        ScrollReveal().reveal('.hero-section a', {
-            delay: 500,
-            distance: '50px',
-            origin: 'bottom',
-            easing: 'ease-in-out'
-        });
-        
-        ScrollReveal().reveal('.modern-card', {
-            delay: 300,
-            interval: 100,
-            distance: '50px',
-            origin: 'bottom',
-            easing: 'ease-in-out'
-        });
-        
-        ScrollReveal().reveal('.testimonial-card', {
-            delay: 300,
-            interval: 100,
-            distance: '50px',
-            origin: 'bottom',
-            easing: 'ease-in-out'
-        });
-        
-        ScrollReveal().reveal('.pricing-card', {
-            delay: 300,
-            interval: 100,
-            distance: '50px',
-            origin: 'bottom',
-            easing: 'ease-in-out'
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const mobileMenu = document.getElementById('mobile-menu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-    </script>
-</body>
-</html>
